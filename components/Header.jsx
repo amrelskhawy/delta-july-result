@@ -9,7 +9,7 @@ export default function Header() {
                 <p>للتدريب و التنمية البشريـة</p>
             </div>
            <div className="bg-white  rounded-full">
-           <Image src={Logo} width={80} h={80} />
+            <Image src={Logo} width={80} h={80} />
            </div>
         </div>
     </header>

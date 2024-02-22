@@ -5,10 +5,8 @@ import StudentInfo from "@/components/StudentInfo";
 import { useState, useEffect } from "react";
 import { Spinner } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
-import { Button } from "@nextui-org/react";
-import Link from "next/link";
-import { FacebookShareButton } from "react-share";
-
+import { Link, Button } from "@nextui-org/react";
+import Footer from "@/components/Footer";
 
 export default function Page({ params }) {
 
@@ -30,7 +28,7 @@ export default function Page({ params }) {
 
         const studentBack = students.find((student) => parseInt(student.id) === parseInt(params.id));
 
-        if( studentBack ) {
+        if (studentBack) {
           setStudent(studentBack)
         } else {
 
@@ -77,25 +75,27 @@ export default function Page({ params }) {
 
   if (student) {
     return (
-      <div className="">
+      <div className="min-h-screen  ">
         <Header />
-        <div className="relative">
-          <div className="absolute left-24">
-            <Link href="/">
-              <Button
-                color="primary"
-                
-              >
-                العودة الى الرئيسية
-              </Button>
-            </Link>
-          </div>
+        <div className="relative my-12">
 
-          <div className="max-w-[800px] mt-24 mx-auto">
+
+          <div className="max-w-[800px]  mx-auto">
+            <div className="">
+              <Link href="/">
+                <Button
+                  color="primary"
+
+                >
+                  العودة الى الرئيسية
+                </Button>
+              </Link>
+            </div>
             <StudentInfo student={student} />
           </div>
 
         </div>
+        <Footer />
       </div>
     )
   }
@@ -106,11 +106,13 @@ export default function Page({ params }) {
         <Header />
 
         <div className="max-w-[800px] mt-24 mx-auto">
-            <p className="text-4xl text-center">
-              لا يوجد طالب مسجل لدينا <br />
-              بالرقم القومى المدخل
-            </p>
-          </div>
+          <p className="text-4xl text-center">
+            لا يوجد طالب مسجل لدينا <br />
+            بالرقم القومى المدخل
+          </p>
+        </div>
+
+        <Footer />
       </div>
     )
   }

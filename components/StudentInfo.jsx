@@ -1,21 +1,22 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Chip } from "@nextui-org/react";
-import { FacebookIcon, FacebookShareButton, WhatsappIcon, WhatsappShareButton } from "react-share";
 
 
 
 
 export default function StudentInfo({ student }) {
 
+
   const {
     name,
     id,
     code,
-    practical,
-    thero,
-    E,
+    interior,
+    anatomy,
+    FirstAid,
+    Combat,
     total
   } = student
 
@@ -46,9 +47,10 @@ export default function StudentInfo({ student }) {
 
   function isPassed() {
     if (
-      parseInt(practical) >= 45 &&
-      parseInt(thero) >= 25 &&
-      parseInt(E) >= 10
+      parseInt(interior) >= 25 &&
+      parseInt(anatomy) >= 25 &&
+      parseInt(FirstAid) >= 15 &&
+      parseInt(Combat) >= 15
     ) {
       return 'success'
     }
@@ -83,12 +85,12 @@ export default function StudentInfo({ student }) {
             </TableCell>
           </TableRow>
 
-          <TableRow key="3">
+          {code && <TableRow key="3">
             <TableCell>الرقم الاكاديميى</TableCell>
             <TableCell>
               {code}
             </TableCell>
-          </TableRow>
+          </TableRow>}
 
           <TableRow key="4">
             <TableCell>الفرع</TableCell>
@@ -100,24 +102,7 @@ export default function StudentInfo({ student }) {
             </TableCell>
           </TableRow>
 
-          <TableRow key="4">
-            <TableCell>مشاركة مع</TableCell>
-            <TableCell>
-              <div>
-                <FacebookShareButton
-                  url={"https://deltaacademy-natega.netlify.app/student/" + id} >
-                  <FacebookIcon size={30} />
-                </FacebookShareButton>
 
-                <WhatsappShareButton url={"https://deltaacademy-natega.netlify.app/student/" + id}>
-                  <WhatsappIcon size={30} />
-                </WhatsappShareButton>
-
-
-              </div>
-
-            </TableCell>
-          </TableRow>
 
 
         </TableBody>
@@ -197,34 +182,43 @@ export default function StudentInfo({ student }) {
         </TableHeader>
         <TableBody>
           <TableRow key="1">
-            <TableCell className="font-medium">التمريض العملى</TableCell>
+            <TableCell className="font-medium">باطني وجراحي </TableCell>
             <TableCell className="text-center">
 
-              <Chip className="text-white font-bold" color={getColor(practical, 90)}>
-                {getStatus(practical, 90)}
+              <Chip className="text-white font-bold" color={getColor(interior, 50)}>
+                {getStatus(interior, 50)}
               </Chip>
             </TableCell>
-            <TableCell className="text-center">90</TableCell>
+            <TableCell className="text-center">50</TableCell>
           </TableRow>
           <TableRow key="2">
-            <TableCell className="font-medium">التمريض النظرى</TableCell>
+            <TableCell className="font-medium">التشريح</TableCell>
             <TableCell className="text-center">
-              <Chip className="text-white font-bold" color={getColor(thero, 50)}>
-                {getStatus(thero, 50)}
+              <Chip className="text-white font-bold" color={getColor(anatomy, 50)}>
+                {getStatus(anatomy, 50)}
               </Chip>
             </TableCell>
             <TableCell className="text-center">50</TableCell>
           </TableRow>
           <TableRow key="3">
-            <TableCell className="font-medium">English</TableCell>
+            <TableCell className="font-medium">الاسعافات الاولية</TableCell>
             <TableCell className="text-center">
-              <Chip className="text-white font-bold" color={getColor(E, 20)}>
-                {getStatus(E, 20)}
+              <Chip className="text-white font-bold" color={getColor(FirstAid, 20)}>
+                {getStatus(FirstAid, 20)}
               </Chip>
             </TableCell>
             <TableCell className="text-center">30</TableCell>
           </TableRow>
           <TableRow key="4">
+            <TableCell className="font-medium">مكافحة العدوى</TableCell>
+            <TableCell className="text-center">
+              <Chip className="text-white font-bold" color={getColor(Combat, 20)}>
+                {getStatus(Combat, 20)}
+              </Chip>
+            </TableCell>
+            <TableCell className="text-center">30</TableCell>
+          </TableRow>
+          <TableRow key="5">
             <TableCell className="font-medium">المجموع الكلى</TableCell>
             <TableCell className="text-center">
               <Chip className="text-white font-bold" color={isPassed()} >
@@ -233,7 +227,7 @@ export default function StudentInfo({ student }) {
 
             </TableCell>
             <TableCell className="text-center">
-              170
+              160
             </TableCell>
           </TableRow>
           <TableRow key="5">

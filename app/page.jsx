@@ -1,11 +1,12 @@
 'use client'
 
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import StudentInfo from "@/components/StudentInfo";
-
 import { Input, Button } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
+
 
 export default function Home() {
   const [studentsData, setStudentData] = useState([])
@@ -76,15 +77,10 @@ export default function Home() {
           </div>
         </div>
 
+        <div className=" absolute bottom-0 left-0 w-full">
 
-        {/* Student Info */}
-
-        <div className="container p-4 mx-auto">
-          
+          <Footer />
         </div>
-        <footer className="footer absolute bottom-0 left-0 w-full">
-            حقوق النشر لأكاديمية الدلتا 2024
-      </footer>
       </div>
     );
   }

@@ -203,7 +203,7 @@ export default function StudentInfo({ student }) {
           <TableRow key="3">
             <TableCell className="font-medium">الاسعافات الاولية</TableCell>
             <TableCell className="text-center">
-              <Chip className="text-white font-bold" color={getColor(FirstAid, 20)}>
+              <Chip className="text-white font-bold" color={getColor(FirstAid,30)}>
                 {getStatus(FirstAid, 30)}
               </Chip>
             </TableCell>
@@ -212,7 +212,7 @@ export default function StudentInfo({ student }) {
           <TableRow key="4">
             <TableCell className="font-medium">مكافحة العدوى</TableCell>
             <TableCell className="text-center">
-              <Chip className="text-white font-bold" color={getColor(Combat, 20)}>
+              <Chip className="text-white font-bold" color={getColor(Combat, 30)}>
                 {getStatus(Combat, 30)}
               </Chip>
             </TableCell>

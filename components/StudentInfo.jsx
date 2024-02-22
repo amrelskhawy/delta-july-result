@@ -204,7 +204,7 @@ export default function StudentInfo({ student }) {
             <TableCell className="font-medium">الاسعافات الاولية</TableCell>
             <TableCell className="text-center">
               <Chip className="text-white font-bold" color={getColor(FirstAid, 20)}>
-                {getStatus(FirstAid, 20)}
+                {getStatus(FirstAid, 30)}
               </Chip>
             </TableCell>
             <TableCell className="text-center">30</TableCell>
@@ -213,7 +213,7 @@ export default function StudentInfo({ student }) {
             <TableCell className="font-medium">مكافحة العدوى</TableCell>
             <TableCell className="text-center">
               <Chip className="text-white font-bold" color={getColor(Combat, 20)}>
-                {getStatus(Combat, 20)}
+                {getStatus(Combat, 30)}
               </Chip>
             </TableCell>
             <TableCell className="text-center">30</TableCell>

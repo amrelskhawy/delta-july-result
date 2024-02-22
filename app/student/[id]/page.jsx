@@ -104,15 +104,12 @@ export default function Page({ params }) {
     return (
       <div>
         <Header />
-
         <div className="max-w-[800px] mt-24 mx-auto">
           <p className="text-4xl text-center">
             لا يوجد طالب مسجل لدينا <br />
             بالرقم القومى المدخل
           </p>
         </div>
-
-        <Footer />
       </div>
     )
   }

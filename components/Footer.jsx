@@ -22,7 +22,7 @@ export default function Footer() {
             <div className="dessouq">
               <h5 className="text-xl font-bold mb-4 "> فرع دسوق </h5>
               <p>
-                شارع الاستاد - أمام كدرسة الزراعه مباشرة - أعلى شركة نور داك للسياحة
+                شارع الاستاد - أمام مدرسة الزراعه مباشرة - أعلى شركة نور داك للسياحة
               </p>
               <p className="text-lg">
                 01016393992

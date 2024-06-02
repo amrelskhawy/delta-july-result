@@ -3,9 +3,6 @@
 import React from "react";
 import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Chip } from "@nextui-org/react";
 
-
-
-
 export default function StudentInfo({ student }) {
 
 
@@ -13,17 +10,16 @@ export default function StudentInfo({ student }) {
     name,
     id,
     code,
-    interior,
-    anatomy,
-    FirstAid,
-    Combat,
+    women,
+    pharma,
+    analysis,
     total
   } = student
 
   function getStatus(grade, max) {
 
     switch (true) {
-      case grade === null:
+      case grade === "null":
         return 'لم يحضر';
       case grade < max / 2:
         return grade + ' - راسب';
@@ -35,7 +31,7 @@ export default function StudentInfo({ student }) {
   function getColor(grade, max) {
 
     switch (true) {
-      case grade === null:
+      case grade === "null":
         return 'warning';
       case grade < max / 2:
         return 'danger';
@@ -47,10 +43,9 @@ export default function StudentInfo({ student }) {
 
   function isPassed() {
     if (
-      parseInt(interior) >= 25 &&
-      parseInt(anatomy) >= 25 &&
-      parseInt(FirstAid) >= 15 &&
-      parseInt(Combat) >= 15
+      parseInt(women) >= 25 &&
+      parseInt(pharma) >= 25 &&
+      parseInt(analysis) >= 25
     ) {
       return 'success'
     }
@@ -171,7 +166,7 @@ export default function StudentInfo({ student }) {
       </Table> */}
 
       <h3 className="section__title">
-        نتيجة الترم التانى
+        نتيجة الترم التالت
       </h3>
 
       <Table aria-label="Example static collection table" >
@@ -182,41 +177,32 @@ export default function StudentInfo({ student }) {
         </TableHeader>
         <TableBody>
           <TableRow key="1">
-            <TableCell className="font-medium">باطني وجراحي </TableCell>
+            <TableCell className="font-medium">تمريض النساء و الاطفال</TableCell>
             <TableCell className="text-center">
 
-              <Chip className="text-white font-bold" color={getColor(interior, 50)}>
-                {getStatus(interior, 50)}
+              <Chip className="text-white font-bold" color={getColor(women, 50)}>
+              {getStatus(women, 50)}
               </Chip>
             </TableCell>
             <TableCell className="text-center">50</TableCell>
           </TableRow>
           <TableRow key="2">
-            <TableCell className="font-medium">التشريح</TableCell>
+            <TableCell className="font-medium">الفارما</TableCell>
             <TableCell className="text-center">
-              <Chip className="text-white font-bold" color={getColor(anatomy, 50)}>
-                {getStatus(anatomy, 50)}
+              <Chip className="text-white font-bold" color={getColor(pharma, 50)}>
+                {getStatus(pharma, 50)}
               </Chip>
             </TableCell>
             <TableCell className="text-center">50</TableCell>
           </TableRow>
           <TableRow key="3">
-            <TableCell className="font-medium">الاسعافات الاولية</TableCell>
+            <TableCell className="font-medium">التحاليل الطبية</TableCell>
             <TableCell className="text-center">
-              <Chip className="text-white font-bold" color={getColor(FirstAid,30)}>
-                {getStatus(FirstAid, 30)}
+              <Chip className="text-white font-bold" color={getColor(analysis, 50)}>
+              {getStatus(analysis, 50)}
               </Chip>
             </TableCell>
-            <TableCell className="text-center">30</TableCell>
-          </TableRow>
-          <TableRow key="4">
-            <TableCell className="font-medium">مكافحة العدوى</TableCell>
-            <TableCell className="text-center">
-              <Chip className="text-white font-bold" color={getColor(Combat, 30)}>
-                {getStatus(Combat, 30)}
-              </Chip>
-            </TableCell>
-            <TableCell className="text-center">30</TableCell>
+            <TableCell className="text-center">50</TableCell>
           </TableRow>
           <TableRow key="5">
             <TableCell className="font-medium">المجموع الكلى</TableCell>
@@ -227,7 +213,7 @@ export default function StudentInfo({ student }) {
 
             </TableCell>
             <TableCell className="text-center">
-              160
+              150
             </TableCell>
           </TableRow>
           <TableRow key="5">

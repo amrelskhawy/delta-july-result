@@ -1,4 +1,4 @@
-// File: E:\DeltaNatega\app\student\[id]\page.jsx
+// File: C:\Users\Amr\Desktop\delta-july-result\app\student\[id]\page.jsx
 import * as entry from '../../../../../app/student/[id]/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

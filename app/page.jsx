@@ -56,7 +56,7 @@ export default function Home() {
         <div className="container grid  mx-auto text-center justify-center">
           <div>
             <h2 className="md:text-3xl text-2xl my-8  font-bold" >
-              نتيجة دفعه يوليو الترم التانى
+              نتيجة دفعه يوليو الترم الثالث
               <br />
               2024/2023
             </h2>
